@@ -18,3 +18,17 @@ cat << 'EOF' >> README.md
 * **Infrastructure as Code:** Terraform
 * **CI/CD:** GitHub Actions
 * **Observability:** Amazon CloudWatch Logs & Metrics
+
+## Getting Started
+
+### Prerequisites
+* Python 3.12+
+* AWS CLI configured with local credentials
+* Terraform >= 1.7.0
+
+### Local Environment Setup
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r src/requirements.txt
+```
