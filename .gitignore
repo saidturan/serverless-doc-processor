@@ -7,3 +7,6 @@ __pycache__/
 *.tfstate
 *.tfstate.backup
 .terraform.tfstate.lock.info
+
+# Terraform deployed zips
+*.zip
