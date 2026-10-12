@@ -14,3 +14,19 @@ resource "aws_iam_role_policy_attachment" "lambda_basic" {
   role       = aws_iam_role.lambda_exec.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
+
+resource "aws_iam_policy" "lambda_s3_policy" {
+  name        = "${var.project_name}-s3-policy"
+  description = "Allow Lambda to access S3 buckets"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action = ["s3:GetObject", "s3:PutObject"]
+      Effect = "Allow"
+      Resource = [
+        "${aws_s3_bucket.input_bucket.arn}/*",
+        "${aws_s3_bucket.output_bucket.arn}/*"
+      ]
+    }]
+  })
+}
