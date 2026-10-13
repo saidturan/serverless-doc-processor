@@ -23,3 +23,14 @@ jobs:
           pip install -r src/requirements.txt
       - name: Run Pytest
         run: pytest
+
+  lint-terraform:
+    name: Validate Terraform Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+      - name: Check Terraform Formatting
+        run: terraform fmt -check -recursive infra/
