@@ -1,3 +1,5 @@
+[![CI Pipeline](https://github.com/saidturan/serverless-doc-processor/actions/workflows/ci.yml/badge.svg)](https://github.com/saidturan/serverless-doc-processor/actions/workflows/ci.yml)
+
 # Serverless Document Processor
 
 An event-driven microservice to process and analyze uploaded documents in the cloud.
